@@ -1,0 +1,157 @@
+
+
+<div *ngIf="!add_client && !edit_client">
+
+
+<table class="table table-hover table-bordered results">
+  <thead class="thead-dark">
+    <tr>
+      <th *ngFor=" let header of header_list" scope="col">{{header}} </th>
+    </tr>
+    <tr class="warning no-result">
+      <td colspan="4"><i class="fa fa-warning"></i> No result</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let client of client_list">
+      <th scope="row">{{client.cedula}}</th>
+      <td>{{client.name}}</td>
+      <td>{{client.lastname1}}</td>
+      <td>{{client.lastname2}}</td>
+      <td>{{client.email}}</td>
+      <td>{{client.phone}}</td>
+      <td><button type="submit" class="btn btn-success" (click)="show_edit_client(client.id)" >Editar</button></td>
+      <td><button type="submit" class="btn " (click)="delete_client(client.id)" >Eliminar</button></td>
+    </tr>
+  </tbody>
+</table>
+<button type="submit" class="btn btn-success" (click)="add_client=true" >Agregar Cliente</button>
+
+</div>
+
+
+<div class="container" *ngIf="add_client">
+<h1>Agregar Cliente</h1>
+  <form (ngSubmit)="onSubmitAdd()" #addClientForm="ngForm">
+
+    <div class="form-group">
+      <label for="cedula">Cédula</label>
+      <input type="number" class="form-control" id="cedula"
+             required
+             [(ngModel)]="client_to_add.cedula" name="cedula"
+             #cedula="ngModel" placeholder="601760756">
+
+      <div [hidden]="cedula.valid || cedula.pristine"
+           class="alert alert-danger">
+        La cédula es requerida
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="name">Nombre</label>
+      <input type="text" class="form-control" id="name"
+             required
+             [(ngModel)]="client_to_add.name" name="name"
+             #name="ngModel" placeholder="Kristy, Krissia, Verónica">
+
+      <div [hidden]="name.valid || name.pristine"
+           class="alert alert-danger">
+        EL nombre es requerido
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="lastname1">Primer Apellido</label>
+      <input type="text" class="form-control" id="lastname1"
+             [(ngModel)]="client_to_add.lastname1" name="lastname1"
+             placeholder="Picado, Pacheco, Rodríguez">
+    </div>
+
+    <div class="form-group">
+      <label for="lastname2">Segundo Apellido</label>
+      <input type="text" class="form-control" id="lastname2"
+             [(ngModel)]="client_to_add.lastname2" name="lastname2"
+             placeholder="Rosales, Garay, Flores">
+    </div>
+
+    <div class="form-group">
+      <label for="correo">Correo</label>
+      <input type="text" class="form-control" id="correo"
+             [(ngModel)]="client_to_add.email" name="correo"
+             placeholder="usuario@correo.com">
+    </div>
+
+    <div class="form-group">
+      <label for="Phone">Teléfono</label>
+      <input type="Number" class="form-control" id="Phone"
+             [(ngModel)]="client_to_add.phone" name="Phone"
+             placeholder="87654002">
+    </div>
+
+    <button type="submit" class="btn btn-success" [disabled]="!addClientForm.form.valid">Submit</button>
+  </form>
+</div>
+
+
+<div class="container" *ngIf="edit_client">
+<h1>Editar Cliente</h1>
+  <form (ngSubmit)="onSubmitEdit()" #editClientForm="ngForm">
+
+    <div class="form-group">
+      <label for="cedula">Cédula</label>
+      <input type="number" class="form-control" id="cedula"
+             required
+             [(ngModel)]="client_to_edit.cedula" name="cedula"
+             #cedula="ngModel" placeholder="601760756">
+
+      <div [hidden]="cedula.valid || cedula.pristine"
+           class="alert alert-danger">
+        La cédula es requerida
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="name">Nombre</label>
+      <input type="text" class="form-control" id="name"
+             required
+             [(ngModel)]="client_to_edit.name" name="name"
+             #name="ngModel" placeholder="Kristy, Krissia, Verónica">
+
+      <div [hidden]="name.valid || name.pristine"
+           class="alert alert-danger">
+        EL nombre es requerido
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="FLname">Primer Apellido</label>
+      <input type="text" class="form-control" id="FLname"
+             [(ngModel)]="client_to_edit.lastname1" name="FLname"
+             placeholder="Rodríguez, Agüero, Melloni">
+    </div>
+
+    <div class="form-group">
+      <label for="SLname">Segundo Apellido</label>
+      <input type="text" class="form-control" id="SLname"
+             [(ngModel)]="client_to_edit.lastname2" name="SLname"
+             placeholder="Delgado, Murillo, Campanini">
+    </div>
+
+
+    <div class="form-group">
+      <label for="correo">Correo</label>
+      <input type="text" class="form-control" id="correo"
+             [(ngModel)]="client_to_edit.email" name="correo"
+             placeholder="usuario@correo.com">
+    </div>
+
+
+    <div class="form-group">
+      <label for="Number">Teléfono</label>
+      <input type="number" class="form-control" id="Number"
+             [(ngModel)]="client_to_edit.phone" name="Number">
+    </div>
+
+    <button type="submit" class="btn btn-success" [disabled]="!editClientForm.form.valid">Submit</button>
+  </form>
+</div>
