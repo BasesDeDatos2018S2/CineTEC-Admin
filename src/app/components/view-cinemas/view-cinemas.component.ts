@@ -15,7 +15,7 @@ export class ViewCinemasComponent implements OnInit {
   constructor() {
     this.add_cinema = false;
     this.cinema_to_add = new Cinema(0,"", "");
-    this.header_list = ["ID", "Nombre", "Ubicación","","",];
+    this.header_list = [ "Nombre", "Ubicación","","",];
     this.cinema_list.push(new Cinema(1, "Cinépolis","Paseo Metropoli, Cartago"));
     this.cinema_list.push(new Cinema(2, "NovaCinemas", "Ciudad del Este, Tres ríos"));
     console.log(this.cinema_list);

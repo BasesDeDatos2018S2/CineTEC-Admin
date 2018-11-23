@@ -1,4 +1,4 @@
-<div *ngIf="!add_cinema && !view_cinema">
+<div *ngIf="!add_cinema && !edit_cinema">
 
 
 <table class="table table-hover table-bordered results">
@@ -14,7 +14,7 @@
     <tr *ngFor="let cinema of cinema_list">
       <td>{{cinema.name}}</td>
       <td>{{cinema.location}}</td>
-      <td><button type="submit" class="btn btn-success" (click)="hola" >Ver Cine</button></td>
+      <td><button type="submit" class="btn btn-success" (click)="hola" >Editar</button></td>
       <td><button type="submit" class="btn " (click)="delete_cinema(cinema.id)" >Eliminar</button></td>
     </tr>
   </tbody>
@@ -53,29 +53,16 @@
 </div>
 
 
-<!-- <div class="container" *ngIf="edit_">
+<div class="container" *ngIf="edit_cinema">
 <h1>Editar Cliente</h1>
-  <form (ngSubmit)="onSubmitEdit()" #editClientForm="ngForm">
-
-    <div class="form-group">
-      <label for="cedula">Cédula</label>
-      <input type="number" class="form-control" id="cedula"
-             required
-             [(ngModel)]="client_to_edit.cedula" name="cedula"
-             #cedula="ngModel" placeholder="601760756">
-
-      <div [hidden]="cedula.valid || cedula.pristine"
-           class="alert alert-danger">
-        La cédula es requerida
-      </div>
-    </div>
+  <form (ngSubmit)="onSubmitEdit()" #editCinemaForm="ngForm">
 
     <div class="form-group">
       <label for="name">Nombre</label>
       <input type="text" class="form-control" id="name"
              required
-             [(ngModel)]="client_to_edit.name" name="name"
-             #name="ngModel" placeholder="Kristy, Krissia, Verónica">
+             [(ngModel)]="cinema_to_edit.name" name="name"
+             #name="ngModel" placeholder="Cinépolis">
 
       <div [hidden]="name.valid || name.pristine"
            class="alert alert-danger">
@@ -84,34 +71,12 @@
     </div>
 
     <div class="form-group">
-      <label for="FLname">Primer Apellido</label>
-      <input type="text" class="form-control" id="FLname"
-             [(ngModel)]="client_to_edit.lastname1" name="FLname"
-             placeholder="Rodríguez, Agüero, Melloni">
-    </div>
-
-    <div class="form-group">
-      <label for="SLname">Segundo Apellido</label>
-      <input type="text" class="form-control" id="SLname"
-             [(ngModel)]="client_to_edit.lastname2" name="SLname"
-             placeholder="Delgado, Murillo, Campanini">
-    </div>
-
-
-    <div class="form-group">
-      <label for="correo">Correo</label>
-      <input type="text" class="form-control" id="correo"
-             [(ngModel)]="client_to_edit.email" name="correo"
-             placeholder="usuario@correo.com">
-    </div>
-
-
-    <div class="form-group">
-      <label for="Number">Teléfono</label>
-      <input type="number" class="form-control" id="Number"
-             [(ngModel)]="client_to_edit.phone" name="Number">
+      <label for="location">Ubicación</label>
+      <input type="text" class="form-control" id="location"
+             [(ngModel)]="client_to_edit.location" name="location"
+             placeholder="San José, Cartago">
     </div>
 
     <button type="submit" class="btn btn-success" [disabled]="!editClientForm.form.valid">Submit</button>
   </form>
-</div> -->
+</div>
