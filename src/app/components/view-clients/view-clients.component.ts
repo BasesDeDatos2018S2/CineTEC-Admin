@@ -27,12 +27,13 @@ export class ViewClientsComponent implements OnInit {
 
       this.client_list.push(new Clients(1,609630745, "Pedro", 'Miranda', 'Picado',"nano@gmail.com", "87365433"));
       this.client_list.push(new Clients(2,609630745, "Pedro", 'Miranda', 'Picado',"nano@gmail.com", "87365433"));
-      
+
       console.log(this.client_list);
     }
 
     ngOnInit() {
     }
+
     onSubmitAdd() {
       this.client_to_add.id = this.client_list.length;
       this.client_list.push(this.client_to_add);
@@ -63,6 +64,7 @@ export class ViewClientsComponent implements OnInit {
         }
       }
     }
+
     delete_client(id) {
       console.log("delete", id);
       for (let i = 0; i < this.client_list.length; i++) {
@@ -73,4 +75,5 @@ export class ViewClientsComponent implements OnInit {
         }
       }
     }
+    
   }
