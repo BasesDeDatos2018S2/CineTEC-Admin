@@ -16,6 +16,7 @@
       <td>{{screening.sala}}</td>
       <td>{{screening.peli}}</td>
       <td>{{screening.horario}}</td>
+      <td>{{screening.price}}</td>
 
       <td><button type="submit" class="btn btn-success" (click)="show_edit_screening(screening.id)" >Editar</button></td>
       <td><button type="submit" class="btn " (click)="delete_screening(screening.id)" >Eliminar</button></td>
@@ -62,6 +63,15 @@
       <option *ngFor=" let screening of screening_list"  [value]="screening.horario">{{screening.horario}}</option>
     </select>
 
+    <div class="form-group">
+      <label for="Price">Precio</label>
+      <input type="text" class="form-control" id="Price"
+             required
+             [(ngModel)]="protagonists_to_add.Price" name="Price"
+             #name="ngModel" placeholder="3000, 3500">
+
+    </div>
+
 
 
     <button type="submit" class="btn btn-success" [disabled]="!addScreeningForm.form.valid">Submit</button>
@@ -102,6 +112,15 @@
       <!-- <option selected>Choose...</option> -->
       <option *ngFor=" let screening of screening_list"  [value]="screening.horario">{{screening.horario}}</option>
     </select>
+
+    <div class="form-group">
+      <label for="Price">Precio</label>
+      <input type="text" class="form-control" id="Price"
+             required
+             [(ngModel)]="protagonists_to_edit.Price" name="Price"
+             #name="ngModel" placeholder="3000, 3500">
+
+    </div>
 
     <button type="submit" class="btn btn-success" [disabled]="!editScreeningForm.form.valid">Submit</button>
   </form>

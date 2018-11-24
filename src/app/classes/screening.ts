@@ -5,5 +5,6 @@ export class Screening {
     public cine: string,
     public sala: string,
     public horario: string,
+    public price: number,
   ) {  }
 }

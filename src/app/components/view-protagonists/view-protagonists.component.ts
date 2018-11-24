@@ -20,13 +20,13 @@ export class ViewProtagonistsComponent implements OnInit {
     this.add_protagonists = false;
     this.edit_protagonists = false;
 
-    this.protagonists_to_add = new Protagonists(0,"");
-    this.protagonists_to_edit = new Protagonists(1,"");
+    this.protagonists_to_add = new Protagonists(0,"","");
+    this.protagonists_to_edit = new Protagonists(1,"","");
 
-    this.header_list = [ "Nombre","","",];
+    this.header_list = [ "Nombre","Apellido","",""];
 
-    this.protagonists_list.push(new Protagonists(1, "Mario Cimarro"));
-    this.protagonists_list.push(new Protagonists(2, "Ximena Duque"));
+    this.protagonists_list.push(new Protagonists(1, "Mario", "Cimarro"));
+    this.protagonists_list.push(new Protagonists(2, "Ximena", "Duque"));
 // this.protagonists_list.push(new Protagonists(3, "Mariluz Bermúdez"));
 
     console.log(this.protagonists_list);
@@ -38,7 +38,7 @@ export class ViewProtagonistsComponent implements OnInit {
     this.protagonists_to_add.id = this.protagonists_list.length;
     this.protagonists_list.push(this.protagonists_to_add);
     this.add_protagonists = false;
-    this.protagonists_to_add = new Protagonists(0,"");
+    this.protagonists_to_add = new Protagonists(0,"","");
   }
 
   onSubmitEdit() {

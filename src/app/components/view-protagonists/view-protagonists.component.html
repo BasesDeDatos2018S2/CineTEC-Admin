@@ -13,6 +13,7 @@
   <tbody>
     <tr *ngFor="let protagonists of protagonists_list">
       <td>{{protagonists.name}}</td>
+      <td>{{protagonists.lastname}}</td>
       <td><button type="submit" class="btn btn-success" (click)="show_edit_protagonists(protagonists.id)" >Editar</button></td>
       <td><button type="submit" class="btn " (click)="delete_protagonists(protagonists.id)" >Eliminar</button></td>
     </tr>
@@ -39,9 +40,26 @@
         EL nombre es requerido
       </div>
     </div>
+
+    <div class="form-group">
+      <label for="lname">Apellido</label>
+      <input type="text" class="form-control" id="name"
+             required
+             [(ngModel)]="protagonists_to_add.lastname" name="lname"
+             #name="ngModel" placeholder="Dela Mota,Vale">
+
+      <div [hidden]="name.valid || name.pristine"
+           class="alert alert-danger">
+        EL nombre es requerido
+      </div>
+    </div>
+
+    
     <button type="submit" class="btn btn-success" [disabled]="!addProtagonistsForm.form.valid">Submit</button>
   </form>
 </div>
+
+
 
 
 <div class="container" *ngIf="edit_protagonists">
@@ -54,7 +72,20 @@
       <input type="text" class="form-control" id="name"
              required
              [(ngModel)]="protagonists_to_edit.name" name="name"
-             #name="ngModel" placeholder="Mario de la Mota, Angelica Vale">
+             #name="ngModel" placeholder="Mario, Angelica">
+
+      <div [hidden]="name.valid || name.pristine"
+           class="alert alert-danger">
+        EL nombre es requerido
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="lname">Apellido</label>
+      <input type="text" class="form-control" id="name"
+             required
+             [(ngModel)]="protagonists_to_edit.lastname" name="lname"
+             #name="ngModel" placeholder="Dela Mota,Vale">
 
       <div [hidden]="name.valid || name.pristine"
            class="alert alert-danger">
