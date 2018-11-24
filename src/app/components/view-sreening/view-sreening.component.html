@@ -1,0 +1,108 @@
+<div *ngIf="!add_screening && !edit_screening">
+
+
+<table class="table table-hover table-bordered results">
+  <thead class="thead-dark">
+    <tr>
+      <th *ngFor=" let header of header_list" scope="col">{{header}} </th>
+    </tr>
+    <tr class="warning no-result">
+      <td colspan="4"><i class="fa fa-warning"></i> No result</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let screening of screening_list">
+      <td>{{screening.cine}}</td>
+      <td>{{screening.sala}}</td>
+      <td>{{screening.peli}}</td>
+      <td>{{screening.horario}}</td>
+
+      <td><button type="submit" class="btn btn-success" (click)="show_edit_screening(screening.id)" >Editar</button></td>
+      <td><button type="submit" class="btn " (click)="delete_screening(screening.id)" >Eliminar</button></td>
+    </tr>
+  </tbody>
+</table>
+<button type="submit" class="btn btn-success" (click)="add_screening=true" >Agregar Proyección</button>
+
+
+
+</div>
+
+
+<div class="container" *ngIf="add_screening">
+<h1>Agregar Proyección</h1>
+  <form (ngSubmit)="onSubmitAdd()" #addScreeningForm="ngForm">
+
+
+    <label class="my-1 mr-2" for="Selec_cinema">Seleccionar Cine</label>
+    <select class="custom-select my-1 mr-sm-2"  [(ngModel)]="screening_to_add.cine" name="Selec_cinema" >
+      <!-- <option selected>Choose...</option> -->
+      <option *ngFor=" let screening of screening_list"  [value]="screening.cine">{{screening.cine}}</option>
+    </select>
+
+
+    <label class="my-1 mr-2" for="Selec_sala">Seleccionar Sala</label>
+    <select class="custom-select my-1 mr-sm-2"  [(ngModel)]="screening_to_add.sala" name="Selec_sala" >
+      <!-- <option selected>Choose...</option> -->
+      <option *ngFor=" let screening of screening_list"  [value]="screening.sala">{{screening.sala}}</option>
+    </select>
+
+
+
+    <label class="my-1 mr-2" for="Selec_peli">Seleccionar Película</label>
+    <select class="custom-select my-1 mr-sm-2"  [(ngModel)]="screening_to_add.peli" name="Selec_peli" >
+      <!-- <option selected>Choose...</option> -->
+      <option *ngFor=" let screening of screening_list"  [value]="screening.peli">{{screening.peli}}</option>
+    </select>
+
+
+    <label class="my-1 mr-2" for="Selec_horario">Seleccionar Horario</label>
+    <select class="custom-select my-1 mr-sm-2"  [(ngModel)]="screening_to_add.horario" name="Selec_horario" >
+      <!-- <option selected>Choose...</option> -->
+      <option *ngFor=" let screening of screening_list"  [value]="screening.horario">{{screening.horario}}</option>
+    </select>
+
+
+
+    <button type="submit" class="btn btn-success" [disabled]="!addScreeningForm.form.valid">Submit</button>
+  </form>
+
+</div>
+
+
+<div class="container" *ngIf="edit_screening">
+<h1>Editar</h1>
+  <form (ngSubmit)="onSubmitEdit()" #editScreeningForm="ngForm">
+
+
+    <label class="my-1 mr-2" for="Selec_cinema">Seleccionar Cine</label>
+    <select class="custom-select my-1 mr-sm-2"  [(ngModel)]="screening_to_edit.cine" name="Selec_cinema" >
+      <!-- <option selected>Choose...</option> -->
+      <option *ngFor=" let screening of screening_list"  [value]="screening.cine">{{screening.cine}}</option>
+    </select>
+
+
+    <label class="my-1 mr-2" for="Selec_sala">Seleccionar Sala</label>
+    <select class="custom-select my-1 mr-sm-2"  [(ngModel)]="screening_to_edit.sala" name="Selec_sala" >
+      <!-- <option selected>Choose...</option> -->
+      <option *ngFor=" let screening of screening_list"  [value]="screening.sala">{{screening.sala}}</option>
+    </select>
+
+
+
+    <label class="my-1 mr-2" for="Selec_peli">Seleccionar Película</label>
+    <select class="custom-select my-1 mr-sm-2"  [(ngModel)]="screening_to_edit.peli" name="Selec_peli" >
+      <!-- <option selected>Choose...</option> -->
+      <option *ngFor=" let screening of screening_list"  [value]="screening.peli">{{screening.peli}}</option>
+    </select>
+
+
+    <label class="my-1 mr-2" for="Selec_horario">Seleccionar Horario</label>
+    <select class="custom-select my-1 mr-sm-2"  [(ngModel)]="screening_to_edit.horario" name="Selec_horario" >
+      <!-- <option selected>Choose...</option> -->
+      <option *ngFor=" let screening of screening_list"  [value]="screening.horario">{{screening.horario}}</option>
+    </select>
+
+    <button type="submit" class="btn btn-success" [disabled]="!editScreeningForm.form.valid">Submit</button>
+  </form>
+</div>

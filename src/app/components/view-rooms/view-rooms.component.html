@@ -93,6 +93,6 @@
       <option *ngFor=" let room of room_list"  [value]="room.size">{{room.size}} </option>
     </select>
 
-    <button type="submit" class="btn btn-success" [disabled]="!editClientForm.form.valid">Submit</button>
+    <button type="submit" class="btn btn-success" [disabled]="!editRoomForm.form.valid">Submit</button>
   </form>
 </div>

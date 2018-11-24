@@ -7,6 +7,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { ViewCinemasComponent } from './components/view-cinemas/view-cinemas.component';
 import { ViewRoomsComponent } from './components/view-rooms/view-rooms.component';
 import { ViewMoviesComponent } from './components/view-movies/view-movies.component';
+import { ViewSreeningComponent } from './components/view-sreening/view-sreening.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ViewMoviesComponent } from './components/view-movies/view-movies.compon
     NavBarComponent,
     ViewCinemasComponent,
     ViewRoomsComponent,
-    ViewMoviesComponent
+    ViewMoviesComponent,
+    ViewSreeningComponent
   ],
   imports: [
     BrowserModule,
