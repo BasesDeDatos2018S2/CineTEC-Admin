@@ -1,0 +1,68 @@
+<div *ngIf="!add_protagonists && !edit_protagonists">
+
+
+<table class="table table-hover table-bordered results">
+  <thead class="thead-dark">
+    <tr>
+      <th *ngFor=" let header of header_list" scope="col">{{header}} </th>
+    </tr>
+    <tr class="warning no-result">
+      <td colspan="4"><i class="fa fa-warning"></i> No result</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let protagonists of protagonists_list">
+      <td>{{protagonists.name}}</td>
+      <td><button type="submit" class="btn btn-success" (click)="show_edit_protagonists(protagonists.id)" >Editar</button></td>
+      <td><button type="submit" class="btn " (click)="delete_protagonists(protagonists.id)" >Eliminar</button></td>
+    </tr>
+  </tbody>
+</table>
+<button type="submit" class="btn btn-success" (click)="add_protagonists=true" >Agregar Protagonista</button>
+
+</div>
+
+
+<!-- <div class="container" *ngIf="add_protagonists">
+<h1>Agregar Protagonista</h1>
+  <form (ngSubmit)="onSubmitAdd()" #addProtagonistsForm="ngForm">
+
+    <div class="form-group">
+      <label for="name">Nombre</label>
+      <input type="text" class="form-control" id="name"
+             required
+             [(ngModel)]="protagonists_to_add.name" name="name"
+             #name="ngModel" placeholder="Carolina Tejera, Mario Cimarro">
+
+      <div [hidden]="name.valid || name.pristine"
+           class="alert alert-danger">
+        EL nombre es requerido
+      </div>
+    </div>
+    <button type="submit" class="btn btn-success" [disabled]="!addProtagonistsForm.form.valid">Submit</button>
+  </form>
+</div>
+
+
+<div class="container" *ngIf="edit_protagonists">
+<h1>Editar Protaginista</h1>
+  <form (ngSubmit)="onSubmitEdit()" #editProtagonistsForm="ngForm">
+
+
+    <div class="form-group">
+      <label for="name">Nombre</label>
+      <input type="text" class="form-control" id="name"
+             required
+             [(ngModel)]="protagonists_to_edit.name" name="name"
+             #name="ngModel" placeholder="Mario de la Mota, Angelica Vale">
+
+      <div [hidden]="name.valid || name.pristine"
+           class="alert alert-danger">
+        EL nombre es requerido
+      </div>
+    </div>
+
+
+    <button type="submit" class="btn btn-success" [disabled]="!editprotagonistsForm.form.valid">Submit</button>
+  </form>
+</div> -->

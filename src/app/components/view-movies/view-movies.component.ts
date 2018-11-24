@@ -12,6 +12,8 @@ export class ViewMoviesComponent implements OnInit {
 
   movie_list: Movie[] = [];
 
+  img:string='puto';
+
   movie_to_add: Movie;
   movie_to_edit: Movie;
   header_list: string[] = [];
@@ -20,13 +22,13 @@ export class ViewMoviesComponent implements OnInit {
     this.add_movie = false;
     this.edit_movie = false;
 
-    this.movie_to_add = new Movie(0,"","", "", "","","","","");
-    this.movie_to_edit = new Movie(1,"", "", "", "","","","","");
+    this.movie_to_add = new Movie(0,"","", "", "","",[],"","");
+    this.movie_to_edit = new Movie(1,"", "", "", "","",[],"","");
 
-    this.header_list = ["Nombre Original", "Nombre", "Estado", "Director","Protagonistas","Duración", "Clasificación","Póster","",""];
+    this.header_list = ["Nombre Original", "Nombre", "Estado", "Director","Duración", "Clasificación","","",""];
 
-    this.movie_list.push(new Movie(1,"Fast&Furious", "A Todo Gas", 'Activa', '140 minutos',"Guillermo del Toro", "Vin Diesel, Elsa Pataky","D13","http://static.pelisfox.tv/static/movie/cover/original/d45ff2ee9165a6488c5dffba1292c5cd.jpg"));
-    this.movie_list.push(new Movie(2,"Baby", "Niño", 'Inactiva', '120 minutos',"Tarantino", "Vin Diesel, Marlene Favela","D13","https://cd.cinescape.com.pe/cinescape-327x457-189049.jpg"));
+    this.movie_list.push(new Movie(1,"Fast&Furious", "A Todo Gas", 'Activa', '140 minutos',"Guillermo del Toro",['Marlene Favela','Mario Cimarro'],"D13","")); //http://static.pelisfox.tv/static/movie/cover/original/d45ff2ee9165a6488c5dffba1292c5cd.jpg
+    this.movie_list.push(new Movie(2,"Baby", "Niño", 'Inactiva', '120 minutos',"Tarantino",['Elsa Pataky','Eiza González'],"D13","")); //https://cd.cinescape.com.pe/cinescape-327x457-189049.jpg
 
     console.log(this.movie_list);
   }
@@ -38,7 +40,7 @@ export class ViewMoviesComponent implements OnInit {
     this.movie_to_add.id = this.movie_list.length;
     this.movie_list.push(this.movie_to_add);
     this.add_movie = false;
-    this.movie_to_add = new Movie(0,"","", "", "","","","","");
+    this.movie_to_add = new Movie(0,"","", "", "","",[],"","");
   }
 
   onSubmitEdit() {
@@ -64,6 +66,7 @@ export class ViewMoviesComponent implements OnInit {
       }
     }
   }
+
 
   delete_movie(id) {
     console.log("delete", id);

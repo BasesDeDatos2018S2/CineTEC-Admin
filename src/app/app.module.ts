@@ -8,6 +8,7 @@ import { ViewCinemasComponent } from './components/view-cinemas/view-cinemas.com
 import { ViewRoomsComponent } from './components/view-rooms/view-rooms.component';
 import { ViewMoviesComponent } from './components/view-movies/view-movies.component';
 import { ViewSreeningComponent } from './components/view-sreening/view-sreening.component';
+import { ViewProtagonistsComponent } from './components/view-protagonists/view-protagonists.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ViewSreeningComponent } from './components/view-sreening/view-sreening.
     ViewCinemasComponent,
     ViewRoomsComponent,
     ViewMoviesComponent,
-    ViewSreeningComponent
+    ViewSreeningComponent,
+    ViewProtagonistsComponent
   ],
   imports: [
     BrowserModule,

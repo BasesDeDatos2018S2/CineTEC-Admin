@@ -16,12 +16,11 @@
       <td>{{movie.translate_name}}</td>
       <td>{{movie.status}}</td>
       <td>{{movie.director}}</td>
-      <td>{{movie.protagonists}}</td>
       <td>{{movie.duration}}</td>
       <td>{{movie.classification}}</td>
-      <img src={{movie.imagen}} style="max-width:100%;width:auto;height:auto;">
-      <!-- <td>{{movie.imagen}}</td> -->
+      <!-- <img src={{movie.imagen}} style="max-width:100%;width:auto;height:auto;"> -->
 
+      <td><button type="submit" class="btn btn-success" (click)="show_movie(movie.id)" >Ver</button></td>
       <td><button type="submit" class="btn btn-success" (click)="show_edit_movie(movie.id)" >Editar</button></td>
       <td><button type="submit" class="btn " (click)="delete_movie(movie.id)" >Eliminar</button></td>
     </tr>
@@ -68,12 +67,12 @@
              placeholder=Guillermo-del-Toro,Tarantino>
     </div>
 
-    <div class="form-group">
+    <!-- <div class="form-group">
       <label for="protagonists">Protagonistas</label>
       <input type="text" class="form-control" id="protagonists"
              [(ngModel)]="movie_to_add.protagonists" name="protagonists"
              placeholder=Voldemort,DiCaprio>
-    </div>
+    </div> -->
 
     <div class="form-group">
       <label for="duration">Duración</label>
@@ -89,12 +88,21 @@
              placeholder=D13,D15>
     </div>
 
-    <div class="form-group">
+    <!-- <div class="form-group">
       <label for="image">Imagen</label>
       <input type="text" class="form-control" id="image"
              [(ngModel)]="movie_to_add.imagen" name="image"
              placeholder=Select,URL>
-    </div>
+    </div> -->
+
+    <form>
+  <div class="form-group">
+    <label for="image">Imagen</label>
+    <input type="file" class="form-control-file" id="image"
+    [(ngModel)]="movie_to_add.imagen" name="image"
+    placeholder=Select,URL>
+  </div>
+</form>
 
 
     <button type="submit" class="btn btn-success" [disabled]="!addMovieForm.form.valid">Submit</button>
@@ -139,12 +147,12 @@
              placeholder=Guillermo-del-Toro,Tarantino>
     </div>
 
-    <div class="form-group">
+    <!-- <div class="form-group">
       <label for="protagonists">Protagonistas</label>
       <input type="text" class="form-control" id="protagonists"
              [(ngModel)]="movie_to_edit.protagonists" name="protagonists"
              placeholder=Voldemort,DiCaprio>
-    </div>
+    </div> -->
 
     <div class="form-group">
       <label for="duration">Duración</label>
@@ -160,12 +168,22 @@
              placeholder=D13,D15>
     </div>
 
-    <div class="form-group">
+
+    <form>
+  <div class="form-group">
+    <label for="image">Imagen</label>
+    <input type="file" class="form-control-file" id="image"
+    [(ngModel)]="movie_to_edit.imagen" name="image"
+    placeholder=Select,URL>
+  </div>
+</form>
+
+    <!-- <div class="form-group">
       <label for="image">Imagen</label>
       <input type="text" class="form-control" id="image"
              [(ngModel)]="movie_to_edit.imagen" name="image"
              placeholder=Select,URL>
-    </div>
+    </div> -->
 
     <button type="submit" class="btn btn-success" [disabled]="!editMovieForm.form.valid">Submit</button>
   </form>

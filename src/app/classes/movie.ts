@@ -6,7 +6,7 @@ export class Movie {
     public status: string,
     public duration: string,
     public director: string,
-    public protagonists: string,
+    public id_protagonists: string[],
     public classification: string,
     public imagen: string,
   ) {  }
