@@ -7,20 +7,27 @@ import { Clients } from '../../classes/clients';
   styleUrls: ['./view-clients.component.css']
 })
 export class ViewClientsComponent implements OnInit {
+
     add_client: boolean;
     edit_client: boolean;
+
     client_list: Clients[] = [];
+
     client_to_add: Clients;
     client_to_edit: Clients;
     header_list: string[] = [];
     constructor() {
       this.add_client = false;
       this.edit_client = false;
+
       this.client_to_add = new Clients(0,0,"", "", "","","");
       this.client_to_edit = new Clients(1,0, "", "", "","","");
+
       this.header_list = ["Cedula", "Nombre", "Primer Apellido", "Segundo Apellido","Correo","Teléfono", "",""];
+
       this.client_list.push(new Clients(1,609630745, "Pedro", 'Miranda', 'Picado',"nano@gmail.com", "87365433"));
       this.client_list.push(new Clients(2,609630745, "Pedro", 'Miranda', 'Picado',"nano@gmail.com", "87365433"));
+      
       console.log(this.client_list);
     }
 

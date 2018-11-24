@@ -14,7 +14,7 @@
     <tr *ngFor="let cinema of cinema_list">
       <td>{{cinema.name}}</td>
       <td>{{cinema.location}}</td>
-      <td><button type="submit" class="btn btn-success" (click)="hola" >Editar</button></td>
+      <td><button type="submit" class="btn btn-success" (click)="show_edit_cinema(cinema.id)" >Editar</button></td>
       <td><button type="submit" class="btn " (click)="delete_cinema(cinema.id)" >Eliminar</button></td>
     </tr>
   </tbody>
@@ -54,15 +54,16 @@
 
 
 <div class="container" *ngIf="edit_cinema">
-<h1>Editar Cliente</h1>
-  <form (ngSubmit)="onSubmitEdit()" #editCinemaForm="ngForm">
+<h1>Editar Cine</h1>
+  <form (ngSubmit)="onSubmitEdit()" #editCineForm="ngForm">
+
 
     <div class="form-group">
       <label for="name">Nombre</label>
       <input type="text" class="form-control" id="name"
              required
              [(ngModel)]="cinema_to_edit.name" name="name"
-             #name="ngModel" placeholder="Cinépolis">
+             #name="ngModel" placeholder="CCM Cinemas, Cinépolis, Cine Magaly">
 
       <div [hidden]="name.valid || name.pristine"
            class="alert alert-danger">
@@ -70,12 +71,14 @@
       </div>
     </div>
 
+
     <div class="form-group">
       <label for="location">Ubicación</label>
       <input type="text" class="form-control" id="location"
-             [(ngModel)]="client_to_edit.location" name="location"
-             placeholder="San José, Cartago">
+             [(ngModel)]="cinema_to_edit.location" name="location"
+             placeholder="Cartago, Tres Ríos, San José">
     </div>
+
 
     <button type="submit" class="btn btn-success" [disabled]="!editClientForm.form.valid">Submit</button>
   </form>
