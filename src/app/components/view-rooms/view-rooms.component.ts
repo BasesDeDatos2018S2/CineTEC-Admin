@@ -9,17 +9,17 @@ import { Room } from '../../classes/room';
 export class ViewRoomsComponent implements OnInit {
   edit_room: boolean;
   room_to_edit: Room;
-  
+
   add_room: boolean;
   room_list: Room[] = [];
   room_to_add: Room;
   header_list: string[] = [];
   constructor() {
     this.add_room = false;
-    this.room_to_add = new Room(0,"","","","");
-    this.header_list = [ "Cine","Sala", "Tamaño","Capacidad","",""];
-    this.room_list.push(new Room(1,"1-B","Cinépolis","Pequeña","60"));
-    this.room_list.push(new Room(2, "3-R","NovaCinemas","Grande","80"));
+    this.room_to_add = new Room(0,"","","");
+    this.header_list = [ "Cine","Sala", "Tamaño","",""];
+    this.room_list.push(new Room(1,"1-B","Cinépolis","Pequeña (40 espacios)"));
+    this.room_list.push(new Room(2, "3-R","NovaCinemas","Grande (60 espacios)"));
     console.log(this.room_list);
   }
 
@@ -29,7 +29,7 @@ export class ViewRoomsComponent implements OnInit {
     this.room_to_add.id = this.room_list.length;
     this.room_list.push(this.room_to_add);
     this.add_room = false;
-    this.room_to_add = new Room(0,"","","","");
+    this.room_to_add = new Room(0,"","","");
   }
 
   onSubmitEdit() {

@@ -4,6 +4,5 @@ export class Room {
     public number: string,
     public id_cine: string,
     public size: string,
-    public capacity: string,
   ) {  }
 }

@@ -15,7 +15,7 @@
       <td>{{room.id_cine}}</td>
       <td>{{room.number}}</td>
       <td>{{room.size}}</td>
-      <td>{{room.capacity}}</td>
+
       <td><button type="submit" class="btn btn-success" (click)="show_edit_room(room.id)" >Editar</button></td>
       <td><button type="submit" class="btn " (click)="delete_room(room.id)" >Eliminar</button></td>
     </tr>
@@ -61,14 +61,6 @@
       <option *ngFor=" let room of room_list"  [value]="room.size">{{room.size}} </option>
     </select>
 
-
-    <label class="my-1 mr-2" for="Proyecto">Capacidad</label>
-    <select class="custom-select my-1 mr-sm-2"  [(ngModel)]="room_to_add.capacity" name="room_capacity" >
-      <!-- <option selected>Choose...</option> -->
-      <option *ngFor=" let room of room_list"  [value]="room.capacity">{{room.capacity}}</option>
-    </select>
-
-
     <button type="submit" class="btn btn-success" [disabled]="!addRoomForm.form.valid">Submit</button>
   </form>
 
@@ -99,13 +91,6 @@
     <select class="custom-select my-1 mr-sm-2"  [(ngModel)]="room_to_edit.size" name="room_size" >
       <!-- <option selected>Choose...</option> -->
       <option *ngFor=" let room of room_list"  [value]="room.size">{{room.size}} </option>
-    </select>
-
-
-    <label class="my-1 mr-2" for="Proyecto">Capacidad</label>
-    <select class="custom-select my-1 mr-sm-2"  [(ngModel)]="room_to_edit.capacity" name="room_capacity" >
-      <!-- <option selected>Choose...</option> -->
-      <option *ngFor=" let room of room_list"  [value]="room.capacity">{{room.capacity}}</option>
     </select>
 
     <button type="submit" class="btn btn-success" [disabled]="!editClientForm.form.valid">Submit</button>
