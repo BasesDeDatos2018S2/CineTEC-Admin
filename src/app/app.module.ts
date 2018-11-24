@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { ViewClientsComponent } from './components/view-clients/view-clients.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { ViewCinemasComponent } from './components/view-cinemas/view-cinemas.component';
+import { ViewRoomsComponent } from './components/view-rooms/view-rooms.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ViewClientsComponent,
     NavBarComponent,
-    ViewCinemasComponent
+    ViewCinemasComponent,
+    ViewRoomsComponent
   ],
   imports: [
     BrowserModule,
