@@ -11,12 +11,13 @@ import { ViewRoomsComponent } from './components/view-rooms/view-rooms.component
 import { ViewMoviesComponent } from './components/view-movies/view-movies.component';
 import { ViewSreeningComponent } from './components/view-sreening/view-sreening.component';
 import { ViewProtagonistsComponent } from './components/view-protagonists/view-protagonists.component';
+import { Navbar2Component } from './components/navbar2/navbar2.component';
 
 
 const routes: Route[] =[
   {path: '', component: ViewCinemasComponent},
   // {path: 'components/view-cinemas', component: ViewCinemasComponent},
-  {path: 'view-rooms', component: ViewRoomsComponent},
+  {path: 'viewrooms', component: ViewRoomsComponent},
   {path: 'view-movies', component: ViewMoviesComponent},
   {path: 'view-sreening', component: ViewSreeningComponent},
   {path: 'view-protagonists', component: ViewProtagonistsComponent}
@@ -31,7 +32,8 @@ const routes: Route[] =[
     ViewRoomsComponent,
     ViewMoviesComponent,
     ViewSreeningComponent,
-    ViewProtagonistsComponent
+    ViewProtagonistsComponent,
+    Navbar2Component
   ],
   imports: [
     BrowserModule,
