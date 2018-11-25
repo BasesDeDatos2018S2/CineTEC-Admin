@@ -14,8 +14,12 @@ import { ViewProtagonistsComponent } from './components/view-protagonists/view-p
 
 
 const routes: Route[] =[
-  {},
-  {}
+  {path: '', component: ViewCinemasComponent},
+  // {path: 'components/view-cinemas', component: ViewCinemasComponent},
+  {path: 'view-rooms', component: ViewRoomsComponent},
+  {path: 'view-movies', component: ViewMoviesComponent},
+  {path: 'view-sreening', component: ViewSreeningComponent},
+  {path: 'view-protagonists', component: ViewProtagonistsComponent}
 ]
 
 @NgModule({
