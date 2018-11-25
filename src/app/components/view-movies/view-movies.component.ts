@@ -9,10 +9,11 @@ import { Movie } from '../../classes/movie';
 export class ViewMoviesComponent implements OnInit {
   add_movie: boolean;
   edit_movie: boolean;
+  view_movie: boolean;
 
   movie_list: Movie[] = [];
 
-  img:string='puto';
+
 
   movie_to_add: Movie;
   movie_to_edit: Movie;
@@ -21,6 +22,7 @@ export class ViewMoviesComponent implements OnInit {
   constructor() {
     this.add_movie = false;
     this.edit_movie = false;
+    this.view_movie = false;
 
     this.movie_to_add = new Movie(0,"","", "", "","",[],"","");
     this.movie_to_edit = new Movie(1,"", "", "", "","",[],"","");
@@ -57,6 +59,17 @@ export class ViewMoviesComponent implements OnInit {
   }
 
   show_edit_movie(id) {
+    console.log("edit:", id);
+    this.edit_movie = true;
+    for (let movie of this.movie_list) {
+      if (movie.id === id) {
+        this.movie_to_edit = movie;
+        break;
+      }
+    }
+  }
+
+  show_movie(id) {
     console.log("edit:", id);
     this.edit_movie = true;
     for (let movie of this.movie_list) {

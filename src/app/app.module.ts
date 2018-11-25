@@ -16,11 +16,11 @@ import { Navbar2Component } from './components/navbar2/navbar2.component';
 
 const routes: Route[] =[
   {path: '', component: ViewCinemasComponent},
-  // {path: 'components/view-cinemas', component: ViewCinemasComponent},
+  {path: 'viewclients', component: ViewClientsComponent},
   {path: 'viewrooms', component: ViewRoomsComponent},
-  {path: 'view-movies', component: ViewMoviesComponent},
-  {path: 'view-sreening', component: ViewSreeningComponent},
-  {path: 'view-protagonists', component: ViewProtagonistsComponent}
+  {path: 'viewmovies', component: ViewMoviesComponent},
+  {path: 'viewsreening', component: ViewSreeningComponent},
+  {path: 'viewprotagonists', component: ViewProtagonistsComponent}
 ]
 
 @NgModule({
