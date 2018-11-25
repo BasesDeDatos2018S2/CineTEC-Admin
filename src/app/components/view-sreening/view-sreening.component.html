@@ -10,10 +10,10 @@
   </thead>
   <tbody>
     <tr *ngFor="let screening of screening_list">
-      <td>{{screening.cine}}</td>
-      <td>{{screening.sala}}</td>
-      <td>{{screening.peli}}</td>
-      <td>{{screening.horario}}</td>
+      <td>{{screening.cine}}</td>/// what?
+      <td>{{screening.id_movie_room}}</td>
+      <td>{{screening.id_movie}}</td>
+      <td>{{screening.hour}}</td>
       <td>{{screening.price}}</td>
 
       <td><button type="submit" class="btn btn-success" (click)="show_edit_screening(screening.id)" >Editar</button></td>
@@ -35,31 +35,31 @@
 
 
     <label class="my-1 mr-2" for="Selec_cinema">Seleccionar Cine</label>
-    <select class="custom-select my-1 mr-sm-2"  [(ngModel)]="screening_to_add.cine" name="Selec_cinema" >
+    <select class="custom-select my-1 mr-sm-2"  [(ngModel)]="screening_to_add.cine" name="Selec_cinema" > //no hay cine
 
       <option *ngFor=" let screening of screening_list"  [value]="screening.cine">{{screening.cine}}</option>
     </select>
 
 
     <label class="my-1 mr-2" for="Selec_sala">Seleccionar Sala</label>
-    <select class="custom-select my-1 mr-sm-2"  [(ngModel)]="screening_to_add.sala" name="Selec_sala" >
+    <select class="custom-select my-1 mr-sm-2"  [(ngModel)]="screening_to_add.id_movie_room" name="Selec_sala" >
 
-      <option *ngFor=" let screening of screening_list"  [value]="screening.sala">{{screening.sala}}</option>
+      <option *ngFor=" let screening of screening_list"  [value]="screening.id_movie_room">{{screening.id_movie_room}}</option>
     </select>
 
 
 
     <label class="my-1 mr-2" for="Selec_peli">Seleccionar Película</label>
-    <select class="custom-select my-1 mr-sm-2"  [(ngModel)]="screening_to_add.peli" name="Selec_peli" >
+    <select class="custom-select my-1 mr-sm-2"  [(ngModel)]="screening_to_add.id_movie" name="Selec_peli" >
 
-      <option *ngFor=" let screening of screening_list"  [value]="screening.peli">{{screening.peli}}</option>
+      <option *ngFor=" let screening of screening_list"  [value]="screening.id_movie">{{screening.id_movie}}</option>
     </select>
 
 
     <label class="my-1 mr-2" for="Selec_horario">Seleccionar Horario</label>
-    <select class="custom-select my-1 mr-sm-2"  [(ngModel)]="screening_to_add.horario" name="Selec_horario" >
+    <select class="custom-select my-1 mr-sm-2"  [(ngModel)]="screening_to_add.hour" name="Selec_horario" >
 
-      <option *ngFor=" let screening of screening_list"  [value]="screening.horario">{{screening.horario}}</option>
+      <option *ngFor=" let screening of screening_list"  [value]="screening.hour">{{screening.hour}}</option>
     </select>
 
     <div class="form-group">
@@ -85,31 +85,31 @@
 
 
     <label class="my-1 mr-2" for="Selec_cinema">Seleccionar Cine</label>
-    <select class="custom-select my-1 mr-sm-2"  [(ngModel)]="screening_to_edit.cine" name="Selec_cinema" >
+    <select class="custom-select my-1 mr-sm-2"  [(ngModel)]="screening_to_edit.cine" name="Selec_cinema" > //no hay cine
 
       <option *ngFor=" let screening of screening_list"  [value]="screening.cine">{{screening.cine}}</option>
     </select>
 
 
     <label class="my-1 mr-2" for="Selec_sala">Seleccionar Sala</label>
-    <select class="custom-select my-1 mr-sm-2"  [(ngModel)]="screening_to_edit.sala" name="Selec_sala" >
+    <select class="custom-select my-1 mr-sm-2"  [(ngModel)]="screening_to_edit.id_movie_room" name="Selec_sala" >
 
-      <option *ngFor=" let screening of screening_list"  [value]="screening.sala">{{screening.sala}}</option>
+      <option *ngFor=" let screening of screening_list"  [value]="screening.id_movie_room">{{screening.id_movie_room}}</option>
     </select>
 
 
 
     <label class="my-1 mr-2" for="Selec_peli">Seleccionar Película</label>
-    <select class="custom-select my-1 mr-sm-2"  [(ngModel)]="screening_to_edit.peli" name="Selec_peli" >
+    <select class="custom-select my-1 mr-sm-2"  [(ngModel)]="screening_to_edit.id_movie" name="Selec_peli" >
 
-      <option *ngFor=" let screening of screening_list"  [value]="screening.peli">{{screening.peli}}</option>
+      <option *ngFor=" let screening of screening_list"  [value]="screening.id_movie">{{screening.id_movie}}</option>
     </select>
 
 
     <label class="my-1 mr-2" for="Selec_horario">Seleccionar Horario</label>
-    <select class="custom-select my-1 mr-sm-2"  [(ngModel)]="screening_to_edit.horario" name="Selec_horario" >
+    <select class="custom-select my-1 mr-sm-2"  [(ngModel)]="screening_to_edit.hour" name="Selec_horario" >
 
-      <option *ngFor=" let screening of screening_list"  [value]="screening.horario">{{screening.horario}}</option>
+      <option *ngFor=" let screening of screening_list"  [value]="screening.hour">{{screening.hour}}</option>
     </select>
 
     <div class="form-group">

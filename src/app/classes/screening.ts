@@ -1,10 +1,12 @@
+import { Butaca } from './butaca'
 export class Screening {
   constructor(
     public id: number,
-    public peli: string,
-    public cine: string,
-    public sala: string,
-    public horario: string,
+    public hour: string,
+    public date: string,
     public price: number,
+    public Butacas_ocupadas: Butaca[],
+    public id_movie: number,
+    public id_movie_room: number,
   ) {  }
 }

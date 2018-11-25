@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { RouterModule, Route } from '@angular/router';
+
 import { AppComponent } from './app.component';
 import { ViewClientsComponent } from './components/view-clients/view-clients.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
@@ -9,6 +11,12 @@ import { ViewRoomsComponent } from './components/view-rooms/view-rooms.component
 import { ViewMoviesComponent } from './components/view-movies/view-movies.component';
 import { ViewSreeningComponent } from './components/view-sreening/view-sreening.component';
 import { ViewProtagonistsComponent } from './components/view-protagonists/view-protagonists.component';
+
+
+const routes: Route[] =[
+  {},
+  {}
+]
 
 @NgModule({
   declarations: [
@@ -23,7 +31,8 @@ import { ViewProtagonistsComponent } from './components/view-protagonists/view-p
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
