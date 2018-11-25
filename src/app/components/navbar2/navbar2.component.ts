@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar2.component.css']
 })
 export class Navbar2Component implements OnInit {
-  imagen= "http://www.cinetec.com.mx/img/cinetec-logo@2x.jpg";
+  imagen= "http://files.ctctcdn.com/79c83e11101/7a8453ef-c705-4f87-998b-6e03a9055943.png";
   constructor() { }
 
   ngOnInit() {

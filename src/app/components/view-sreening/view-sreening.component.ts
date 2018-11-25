@@ -19,7 +19,7 @@ export class ViewSreeningComponent implements OnInit {
   constructor(private screeningsService: ScreeningsService) {
     this.add_screening = false;
     this.screening_to_add = new Screening(0,"","",0,[],0,0);
-    this.header_list = [ "Cine","Sala","Película","Horario","Precio","",""];
+    this.header_list = ["ID Sala","Id Película","Horario","Precio","",""];
 
     // this.screening_list.push(new Screening(0,"17:30","24/08/2018",3000,[],3,4));
     // this.screening_list.push(new Screening(1,"17:30","24/08/2018",3000,[],1,2));

@@ -18,7 +18,7 @@ export class ViewRoomsComponent implements OnInit {
   constructor(private roomsService: RoomsService) {
     this.add_room = false;
     this.room_to_add = new Room(0,"",0,0);
-    this.header_list = [ "Cine","Sala", "Tamaño","",""];
+    this.header_list = [ "ID Cine","Sala", "Tamaño","",""];
     // this.room_list.push(new Room(1,"1-B",4,40));
     // this.room_list.push(new Room(2, "3-R",2,60));
     this.updateRoomsList();
