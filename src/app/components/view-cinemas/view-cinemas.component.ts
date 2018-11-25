@@ -20,13 +20,13 @@ export class ViewCinemasComponent implements OnInit {
     this.add_cinema = false;
     this.edit_cinema = false;
 
-    this.cinema_to_add = new Cinema(0,"", "");
-    this.cinema_to_edit = new Cinema(1,"", "");
+    this.cinema_to_add = new Cinema(0,"", "",[]);
+    this.cinema_to_edit = new Cinema(1,"", "",[]);
 
-    this.header_list = [ "Nombre", "Ubicación","","",];
+    this.header_list = [ "Nombre", "Ubicación","",""];
 
-    this.cinema_list.push(new Cinema(1, "Cinépolis","Paseo Metropoli, Cartago"));
-    this.cinema_list.push(new Cinema(2, "NovaCinemas", "Ciudad del Este, Tres ríos"));
+    this.cinema_list.push(new Cinema(1, "Cinépolis","Paseo Metropoli, Cartago",[1,3]));
+    this.cinema_list.push(new Cinema(2, "NovaCinemas", "Ciudad del Este, Tres ríos",[2,4]));
 
     console.log(this.cinema_list);
   }
@@ -38,7 +38,7 @@ export class ViewCinemasComponent implements OnInit {
     this.cinema_to_add.id = this.cinema_list.length;
     this.cinema_list.push(this.cinema_to_add);
     this.add_cinema = false;
-    this.cinema_to_add = new Cinema(0,"", "");
+    this.cinema_to_add = new Cinema(0,"", "",[]);
   }
 
   onSubmitEdit() {

@@ -1,5 +1,5 @@
 <div *ngIf="!add_protagonists && !edit_protagonists">
-  
+
 
 <table class="table table-hover table-bordered results">
   <thead class="thead-dark">
@@ -12,8 +12,8 @@
   </thead>
   <tbody>
     <tr *ngFor="let protagonists of protagonists_list">
-      <td>{{protagonists.name}}</td>
-      <td>{{protagonists.lastname}}</td>
+      <td>{{protagonists.Name}}</td>
+      <td>{{protagonists.LastName}}</td>
       <td><button type="submit" class="btn btn-success" (click)="show_edit_protagonists(protagonists.id)" >Editar</button></td>
       <td><button type="submit" class="btn " (click)="delete_protagonists(protagonists.id)" >Eliminar</button></td>
     </tr>
@@ -32,7 +32,7 @@
       <label for="name">Nombre</label>
       <input type="text" class="form-control" id="name"
              required
-             [(ngModel)]="protagonists_to_add.name" name="name"
+             [(ngModel)]="protagonists_to_add.Name" name="name"
              #name="ngModel" placeholder="Carolina, Mario">
 
       <div [hidden]="name.valid || name.pristine"
@@ -45,7 +45,7 @@
       <label for="lname">Apellido</label>
       <input type="text" class="form-control" id="name"
              required
-             [(ngModel)]="protagonists_to_add.lastname" name="lname"
+             [(ngModel)]="protagonists_to_add.LastName" name="lname"
              #name="ngModel" placeholder="Dela Mota,Vale">
 
       <div [hidden]="name.valid || name.pristine"
@@ -71,7 +71,7 @@
       <label for="name">Nombre</label>
       <input type="text" class="form-control" id="name"
              required
-             [(ngModel)]="protagonists_to_edit.name" name="name"
+             [(ngModel)]="protagonists_to_edit.Name" name="name"
              #name="ngModel" placeholder="Mario, Angelica">
 
       <div [hidden]="name.valid || name.pristine"
@@ -84,7 +84,7 @@
       <label for="lname">Apellido</label>
       <input type="text" class="form-control" id="name"
              required
-             [(ngModel)]="protagonists_to_edit.lastname" name="lname"
+             [(ngModel)]="protagonists_to_edit.LastName" name="lname"
              #name="ngModel" placeholder="Dela Mota,Vale">
 
       <div [hidden]="name.valid || name.pristine"

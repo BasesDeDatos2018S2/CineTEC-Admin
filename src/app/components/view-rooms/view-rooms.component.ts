@@ -16,10 +16,10 @@ export class ViewRoomsComponent implements OnInit {
   header_list: string[] = [];
   constructor() {
     this.add_room = false;
-    this.room_to_add = new Room(0,"","","");
+    this.room_to_add = new Room(0,"",0,0);
     this.header_list = [ "Cine","Sala", "Tamaño","",""];
-    this.room_list.push(new Room(1,"1-B","Cinépolis","Pequeña (40 espacios)"));
-    this.room_list.push(new Room(2, "3-R","NovaCinemas","Grande (60 espacios)"));
+    this.room_list.push(new Room(1,"1-B",4,40));
+    this.room_list.push(new Room(2, "3-R",2,60));
     console.log(this.room_list);
   }
 
@@ -29,7 +29,7 @@ export class ViewRoomsComponent implements OnInit {
     this.room_to_add.id = this.room_list.length;
     this.room_list.push(this.room_to_add);
     this.add_room = false;
-    this.room_to_add = new Room(0,"","","");
+    this.room_to_add = new Room(0,"",0,0);
   }
 
   onSubmitEdit() {

@@ -10,13 +10,13 @@
   </thead>
   <tbody>
     <tr *ngFor="let movie of movie_list">
-      <td>{{movie.original_name}}</td>
-      <td>{{movie.translate_name}}</td>
-      <td>{{movie.status}}</td>
-      <td>{{movie.director}}</td>
-      <td>{{movie.duration}}</td>
-      <td>{{movie.classification}}</td>
-      <img src={{movie.imagen}} style="max-width:50%;width:auto;height:auto;">
+      <td>{{movie.Nombre_Original}}</td>
+      <td>{{movie.Nombre}}</td>
+      <td>{{movie.Estado}}</td>
+      <td>{{movie.Director}}</td>
+      <td>{{movie.Duracion}}</td>
+      <td>{{movie.Clasificacion}}</td>
+      <img src={{movie.Imagen}} style="max-width:50%;width:auto;height:auto;">
 
       <td><button type="submit" class="btn btn-success" (click)="show_movie(movie.id)" >Ver</button></td>
       <td><button type="submit" class="btn btn-success" (click)="show_edit_movie(movie.id)" >Editar</button></td>
@@ -37,7 +37,7 @@
     <div class="form-group">
       <label for="OName">Nombre Original</label>
       <input type="text" class="form-control" id="OName"
-             [(ngModel)]="movie_to_add.original_name" name="OName"
+             [(ngModel)]="movie_to_add.Nombre_Original" name="OName"
              placeholder=FastandFurious,Titanic>
     </div>
 
@@ -45,7 +45,7 @@
     <div class="form-group">
       <label for="Name">Nombre</label>
       <input type="text" class="form-control" id="Name"
-             [(ngModel)]="movie_to_add.translate_name" name="Name"
+             [(ngModel)]="movie_to_add.Nombre" name="Name"
              placeholder=Rápidos-y-Furiosos,A-todo-gas>
     </div>
 
@@ -53,7 +53,7 @@
     <div class="form-group">
       <label for="status">Estado</label>
       <input type="text" class="form-control" id="status"
-             [(ngModel)]="movie_to_add.status" name="status"
+             [(ngModel)]="movie_to_add.Estado" name="status"
              placeholder=Activa,Inactiva>
     </div>
 
@@ -61,7 +61,7 @@
     <div class="form-group">
       <label for="director">Director</label>
       <input type="text" class="form-control" id="director"
-             [(ngModel)]="movie_to_add.director" name="director"
+             [(ngModel)]="movie_to_add.Director" name="director"
              placeholder=Guillermo-del-Toro,Tarantino>
     </div>
 
@@ -75,14 +75,14 @@
     <div class="form-group">
       <label for="duration">Duración</label>
       <input type="text" class="form-control" id="duration"
-             [(ngModel)]="movie_to_add.duration" name="duration"
+             [(ngModel)]="movie_to_add.Duracion" name="duration"
              placeholder=120-minutos>
     </div>
 
     <div class="form-group">
       <label for="classification">Clasificación</label>
       <input type="text" class="form-control" id="classification"
-             [(ngModel)]="movie_to_add.classification" name="classification"
+             [(ngModel)]="movie_to_add.Clasificacion" name="classification"
              placeholder=D13,D15>
     </div>
 
@@ -97,7 +97,7 @@
   <div class="form-group">
     <label for="image">Imagen</label>
     <input type="file" class="form-control-file" id="image"
-    [(ngModel)]="movie_to_add.imagen" name="image"
+    [(ngModel)]="movie_to_add.Imagen" name="image"
     placeholder=Select,URL>
   </div>
 </form>
@@ -110,7 +110,7 @@
 
 
 <div class="container" *ngIf="edit_movie">
-  
+
 <h1>Editar Sala</h1>
   <form (ngSubmit)="onSubmitEdit()" #editMovieForm="ngForm">
 
@@ -118,7 +118,7 @@
     <div class="form-group">
       <label for="OName">Nombre Original</label>
       <input type="text" class="form-control" id="OName"
-             [(ngModel)]="movie_to_edit.original_name" name="OName"
+             [(ngModel)]="movie_to_edit.Nombre_Original" name="OName"
              placeholder=FastandFurious,Titanic>
     </div>
 
@@ -126,7 +126,7 @@
     <div class="form-group">
       <label for="Name">Nombre</label>
       <input type="text" class="form-control" id="Name"
-             [(ngModel)]="movie_to_edit.original_name" name="Name"
+             [(ngModel)]="movie_to_edit.Nombre" name="Name"
              placeholder=Rápidos-y-Furiosos,A-todo-gas>
     </div>
 
@@ -134,7 +134,7 @@
     <div class="form-group">
       <label for="status">Estado</label>
       <input type="text" class="form-control" id="status"
-             [(ngModel)]="movie_to_edit.status" name="status"
+             [(ngModel)]="movie_to_edit.Estado" name="status"
              placeholder=Activa,Inactiva>
     </div>
 
@@ -142,7 +142,7 @@
     <div class="form-group">
       <label for="director">Director</label>
       <input type="text" class="form-control" id="director"
-             [(ngModel)]="movie_to_edit.director" name="director"
+             [(ngModel)]="movie_to_edit.Director" name="director"
              placeholder=Guillermo-del-Toro,Tarantino>
     </div>
 
@@ -156,14 +156,14 @@
     <div class="form-group">
       <label for="duration">Duración</label>
       <input type="text" class="form-control" id="duration"
-             [(ngModel)]="movie_to_edit.duration" name="duration"
+             [(ngModel)]="movie_to_edit.Duracion" name="duration"
              placeholder=120-minutos>
     </div>
 
     <div class="form-group">
       <label for="classification">Clasificación</label>
       <input type="text" class="form-control" id="classification"
-             [(ngModel)]="movie_to_edit.classification" name="classification"
+             [(ngModel)]="movie_to_edit.Clasificacion" name="classification"
              placeholder=D13,D15>
     </div>
 
@@ -172,7 +172,7 @@
   <div class="form-group">
     <label for="image">Imagen</label>
     <input type="file" class="form-control-file" id="image"
-    [(ngModel)]="movie_to_edit.imagen" name="image"
+    [(ngModel)]="movie_to_edit.Imagen" name="image"
     placeholder=Select,URL>
   </div>
 </form>

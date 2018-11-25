@@ -1,13 +1,13 @@
 export class Movie {
   constructor(
     public id: number,
-    public original_name: string,
-    public translate_name: string,
-    public status: string,
-    public duration: string,
-    public director: string,
-    public id_protagonists: string[],
-    public classification: string,
-    public imagen: string,
+    public Nombre_Original: string,
+    public Nombre: string,
+    public Estado: string,
+    public Duracion: string,
+    public Director: string,
+    public Protagonistas: string[],
+    public Clasificacion: string,
+    public Imagen: string,
   ) {  }
 }

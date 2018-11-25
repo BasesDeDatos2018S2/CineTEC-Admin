@@ -1,8 +1,8 @@
 export class Room {
   constructor(
     public id: number,
-    public number: string,
-    public id_cine: string,
-    public size: string,
+    public Nombre: string,
+    public Cine: number,
+    public Size:  number,
   ) {  }
 }
