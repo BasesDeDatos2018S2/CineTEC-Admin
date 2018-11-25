@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Protagonists } from '../../classes/protagonists';
+import { ProtagonistsService } from '../../services/protagonists.service';
 
 @Component({
   selector: 'app-view-protagonists',
@@ -16,7 +17,7 @@ export class ViewProtagonistsComponent implements OnInit {
   protagonists_to_edit: Protagonists;
   header_list: string[] = [];
 
-  constructor() {
+  constructor(private protagonistsService: ProtagonistsService) {
     this.add_protagonists = false;
     this.edit_protagonists = false;
 
@@ -25,55 +26,79 @@ export class ViewProtagonistsComponent implements OnInit {
 
     this.header_list = [ "Nombre","Apellido","",""];
 
-    this.protagonists_list.push(new Protagonists(1, "Mario", "Cimarro"));
-    this.protagonists_list.push(new Protagonists(2, "Ximena", "Duque"));
+    // this.protagonists_list.push(new Protagonists(1, "Mario", "Cimarro"));
+    // this.protagonists_list.push(new Protagonists(2, "Ximena", "Duque"));
 // this.protagonists_list.push(new Protagonists(3, "Mariluz Bermúdez"));
 
+    this.updateProtagonistsList();
     console.log(this.protagonists_list);
   }
 
   ngOnInit() {
   }
+
+
   onSubmitAdd() {
-    this.protagonists_to_add.id = this.protagonists_list.length;
-    this.protagonists_list.push(this.protagonists_to_add);
+
+    this.protagonistsService.createProtagonists(this.protagonists_to_add).subscribe(
+        data => {
+            console.log("POST Request is successful ", data);
+            this.updateProtagonistsList();
+        },
+        error => {
+            console.log("Error", error);
+        }
+    );
     this.add_protagonists = false;
-    this.protagonists_to_add = new Protagonists(0,"","");
+
   }
 
   onSubmitEdit() {
-    for (let protagonists of this.protagonists_list) {
-      if (protagonists.id === this.protagonists_to_edit.id) {
-        protagonists = this.protagonists_to_edit;
-      }
-    }
-    this.edit_protagonists = false;
-  }
+  this.protagonistsService.updateProtagonists(this.protagonists_to_edit).subscribe(
+        data => {
+            console.log("PUT Request is successful ", data);
+            this.updateProtagonistsList();
+        },
+        error => {
+            console.log("Error", error);
+        }
+    );
+  this.edit_protagonists = false;
 
-  show_add_protagonists() {
-    this.add_protagonists = true;
-  }
+}
+
 
   show_edit_protagonists(id) {
-    console.log("edit:", id);
-    this.edit_protagonists = true;
-    for (let protagonists of this.protagonists_list) {
-      if (protagonists.id === id) {
-        this.protagonists_to_edit = protagonists;
-        break;
-      }
+  console.log("edit:", id);
+  this.edit_protagonists = true;
+  for (let protagonists of this.protagonists_list) {
+    if (protagonists.id === id) {
+      this.protagonists_to_edit = Object.assign({}, protagonists);
+      break;
     }
   }
+}
 
   delete_protagonists(id) {
-    console.log("delete", id);
-    for (let i = 0; i < this.protagonists_list.length; i++) {
-      if (this.protagonists_list[i].id == id) {
-        console.log(this.protagonists_list[i]);
-        this.protagonists_list.splice(i, 1);
-        break;
-      }
-    }
-  }
+  console.log("delete", id);
+  this.protagonistsService.deleteProtagonists(id).subscribe(
+        data => {
+            console.log("DELETE Request is successful ", data);
+            this.updateProtagonistsList();
+        },
+        error => {
+            console.log("Error", error);
+        }
+    );
+
+}
+
+updateProtagonistsList(){
+  console.log("updateClientList");
+  this.protagonistsService.getProtagonists().subscribe(data => {
+    console.log("data:", data);
+    this.protagonists_list = data;
+  });
+}
 
   }
