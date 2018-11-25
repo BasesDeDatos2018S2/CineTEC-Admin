@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Route } from '@angular/router';
+import {HttpClientModule} from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 import { AppComponent } from './app.component';
 import { ViewClientsComponent } from './components/view-clients/view-clients.component';
@@ -12,6 +14,10 @@ import { ViewMoviesComponent } from './components/view-movies/view-movies.compon
 import { ViewSreeningComponent } from './components/view-sreening/view-sreening.component';
 import { ViewProtagonistsComponent } from './components/view-protagonists/view-protagonists.component';
 import { Navbar2Component } from './components/navbar2/navbar2.component';
+
+
+import { ClientsService } from './services/clients.service';
+import { CinemasService } from './services/cinemas.service';
 
 
 const routes: Route[] =[
@@ -38,9 +44,14 @@ const routes: Route[] =[
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [
+    ClientsService,
+    CinemasService
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

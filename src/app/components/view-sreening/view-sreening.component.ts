@@ -87,7 +87,7 @@ export class ViewSreeningComponent implements OnInit {
 
 updateScreeningList(){
   console.log("updateClientList");
-  this.screeningsService.getscreeninig().subscribe(data => {
+  this.screeningsService.getScreenings().subscribe(data => {
     console.log("data:", data);
     this.screening_list = data;
   });

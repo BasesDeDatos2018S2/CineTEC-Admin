@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Cinema } from '../../classes/cinema';
-import { CinemaService } from '../../services/cinema.service';
+import { CinemasService } from '../../services/cinemas.service';
 
 @Component({
   selector: 'app-view-cinemas',
@@ -17,7 +17,7 @@ export class ViewCinemasComponent implements OnInit {
   cinema_to_add: Cinema;
   cinema_to_edit: Cinema;
   header_list: string[] = [];
-  constructor(private cinemaService: CinemaService) {
+  constructor(private cinemasService: CinemasService) {
     this.add_cinema = false;
     this.edit_cinema = false;
 
@@ -37,7 +37,7 @@ export class ViewCinemasComponent implements OnInit {
 
   onSubmitAdd() {
 
-    this.cinemaService.createCinema(this.cinema_to_add).subscribe(
+    this.cinemasService.createCinema(this.cinema_to_add).subscribe(
         data => {
             console.log("POST Request is successful ", data);
             this.updateCinemaList();
@@ -51,7 +51,7 @@ export class ViewCinemasComponent implements OnInit {
   }
 
   onSubmitEdit() {
-  this.cinemaService.updateCinema(this.cinema_to_edit).subscribe(
+  this.cinemasService.updateCinema(this.cinema_to_edit).subscribe(
         data => {
             console.log("PUT Request is successful ", data);
             this.updateCinemaList();
@@ -81,7 +81,7 @@ export class ViewCinemasComponent implements OnInit {
 
   delete_cinema(id) {
   console.log("delete", id);
-  this.cinemaService.deleteCinema(id).subscribe(
+  this.cinemasService.deleteCinema(id).subscribe(
         data => {
             console.log("DELETE Request is successful ", data);
             this.updateCinemaList();
@@ -95,7 +95,7 @@ export class ViewCinemasComponent implements OnInit {
 
   updateCinemaList(){
     console.log("updateClientList");
-    this.cinemaService.getCinemas().subscribe(data => {
+    this.cinemasService.getCinemas().subscribe(data => {
       console.log("data:", data);
       this.cinema_list = data;
     });

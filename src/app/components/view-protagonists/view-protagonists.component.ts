@@ -40,7 +40,7 @@ export class ViewProtagonistsComponent implements OnInit {
 
   onSubmitAdd() {
 
-    this.protagonistsService.createProtagonists(this.protagonists_to_add).subscribe(
+    this.protagonistsService.createProtagonist(this.protagonists_to_add).subscribe(
         data => {
             console.log("POST Request is successful ", data);
             this.updateProtagonistsList();
@@ -54,7 +54,7 @@ export class ViewProtagonistsComponent implements OnInit {
   }
 
   onSubmitEdit() {
-  this.protagonistsService.updateProtagonists(this.protagonists_to_edit).subscribe(
+  this.protagonistsService.updateProtagonist(this.protagonists_to_edit).subscribe(
         data => {
             console.log("PUT Request is successful ", data);
             this.updateProtagonistsList();
@@ -81,7 +81,7 @@ export class ViewProtagonistsComponent implements OnInit {
 
   delete_protagonists(id) {
   console.log("delete", id);
-  this.protagonistsService.deleteProtagonists(id).subscribe(
+  this.protagonistsService.deleteProtagonist(id).subscribe(
         data => {
             console.log("DELETE Request is successful ", data);
             this.updateProtagonistsList();
