@@ -25,10 +25,10 @@ export class ViewMoviesComponent implements OnInit {
     this.movie_to_add = new Movie(0,"","", "", "","",[],"","");
     this.movie_to_edit = new Movie(1,"", "", "", "","",[],"","");
 
-    this.header_list = ["Nombre Original", "Nombre", "Estado", "Director","Duración", "Clasificación","","",""];
+    this.header_list = ["Nombre Original", "Nombre", "Estado", "Director","Duración", "Clasificación","Pósters","","",""];
 
-    this.movie_list.push(new Movie(1,"Fast&Furious", "A Todo Gas", 'Activa', '140 minutos',"Guillermo del Toro",['Marlene Favela','Mario Cimarro'],"D13","")); //http://static.pelisfox.tv/static/movie/cover/original/d45ff2ee9165a6488c5dffba1292c5cd.jpg
-    this.movie_list.push(new Movie(2,"Baby", "Niño", 'Inactiva', '120 minutos',"Tarantino",['Elsa Pataky','Eiza González'],"D13","")); //https://cd.cinescape.com.pe/cinescape-327x457-189049.jpg
+    this.movie_list.push(new Movie(1,"Fast&Furious", "A Todo Gas", 'Activa', '140 minutos',"Guillermo del Toro",['Marlene Favela','Mario Cimarro'],"D13","http://static.pelisfox.tv/static/movie/cover/original/d45ff2ee9165a6488c5dffba1292c5cd.jpg")); //http://static.pelisfox.tv/static/movie/cover/original/d45ff2ee9165a6488c5dffba1292c5cd.jpg
+    this.movie_list.push(new Movie(2,"Baby", "Niño", 'Inactiva', '120 minutos',"Tarantino",['Elsa Pataky','Eiza González'],"D13","https://cd.cinescape.com.pe/cinescape-327x457-189049.jpg")); //https://cd.cinescape.com.pe/cinescape-327x457-189049.jpg
 
     console.log(this.movie_list);
   }

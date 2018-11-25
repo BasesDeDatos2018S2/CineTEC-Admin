@@ -1,6 +1,4 @@
 <div *ngIf="!add_movie && !edit_movie">
-
-
 <table class="table table-hover table-bordered results">
   <thead class="thead-dark">
     <tr>
@@ -18,7 +16,7 @@
       <td>{{movie.director}}</td>
       <td>{{movie.duration}}</td>
       <td>{{movie.classification}}</td>
-      <!-- <img src={{movie.imagen}} style="max-width:100%;width:auto;height:auto;"> -->
+      <img src={{movie.imagen}} style="max-width:50%;width:auto;height:auto;">
 
       <td><button type="submit" class="btn btn-success" (click)="show_movie(movie.id)" >Ver</button></td>
       <td><button type="submit" class="btn btn-success" (click)="show_edit_movie(movie.id)" >Editar</button></td>
@@ -112,6 +110,7 @@
 
 
 <div class="container" *ngIf="edit_movie">
+  
 <h1>Editar Sala</h1>
   <form (ngSubmit)="onSubmitEdit()" #editMovieForm="ngForm">
 

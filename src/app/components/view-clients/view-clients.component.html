@@ -1,8 +1,6 @@
 
 
 <div *ngIf="!add_client && !edit_client">
-
-
 <table class="table table-hover table-bordered results">
   <thead class="thead-dark">
     <tr>
@@ -31,6 +29,7 @@
 
 
 <div class="container" *ngIf="add_client">
+
 <h1>Agregar Cliente</h1>
   <form (ngSubmit)="onSubmitAdd()" #addClientForm="ngForm">
 

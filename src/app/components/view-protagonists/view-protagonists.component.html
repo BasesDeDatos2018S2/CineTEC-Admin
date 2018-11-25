@@ -1,5 +1,5 @@
 <div *ngIf="!add_protagonists && !edit_protagonists">
-
+  
 
 <table class="table table-hover table-bordered results">
   <thead class="thead-dark">
@@ -33,7 +33,7 @@
       <input type="text" class="form-control" id="name"
              required
              [(ngModel)]="protagonists_to_add.name" name="name"
-             #name="ngModel" placeholder="Carolina Tejera, Mario Cimarro">
+             #name="ngModel" placeholder="Carolina, Mario">
 
       <div [hidden]="name.valid || name.pristine"
            class="alert alert-danger">
@@ -54,7 +54,7 @@
       </div>
     </div>
 
-    
+
     <button type="submit" class="btn btn-success" [disabled]="!addProtagonistsForm.form.valid">Submit</button>
   </form>
 </div>
