@@ -20,13 +20,13 @@ export class ViewClientsComponent implements OnInit {
       this.add_client = false;
       this.edit_client = false;
 
-      this.client_to_add = new Clients("","", "", "","","",[]);
-      this.client_to_edit = new Clients("", "", "", "","","",[]);
+      this.client_to_add = new Clients(0,"","", "", "","","",[]);
+      this.client_to_edit = new Clients(0,"", "", "", "","","",[]);
 
       this.header_list = ["Cedula", "Nombre", "Primer Apellido", "Segundo Apellido","Teléfono","Correo", "",""];
 
-      this.client_list.push(new Clients("609630745", "Pedro", 'Miranda', 'Picado',"87365433","nano@gmail.com",[]));
-      this.client_list.push(new Clients("609630745", "Pedro", 'Miranda', 'Picado',"87365433","nano@gmail.com",[]));
+      this.client_list.push(new Clients(0,"609630745", "Pedro", 'Miranda', 'Picado',"87365433","nano@gmail.com",[]));
+      this.client_list.push(new Clients(1,"609630745", "Pedro", 'Miranda', 'Picado',"87365433","nano@gmail.com",[]));
 
       console.log(this.client_list);
     }
@@ -38,7 +38,7 @@ export class ViewClientsComponent implements OnInit {
       this.client_to_add.id = this.client_list.length;
       this.client_list.push(this.client_to_add);
       this.add_client = false;
-      this.client_to_add = new Clients("","", "", "","","",[]);
+      this.client_to_add = new Clients(0,"","", "", "","","",[]);
     }
 
     onSubmitEdit() {

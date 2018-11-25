@@ -17,10 +17,10 @@ export class ViewSreeningComponent implements OnInit {
   header_list: string[] = [];
   constructor() {
     this.add_screening = false;
-    this.screening_to_add = new Screening(0,"","","","",0);
+    this.screening_to_add = new Screening(0,"","",0,[],0,0);
     this.header_list = [ "Cine","Sala","Película","Horario","Precio","",""];
-    this.screening_list.push(new Screening(1,"Animales Fantásticos","Cinépolis","1-B","17:30",3000));
-    this.screening_list.push(new Screening(2,"Venom","NovaCinemas","1-C","18:30",3500));
+    this.screening_list.push(new Screening(0,"17:30","24/08/2018",3000,[],3,4));
+    this.screening_list.push(new Screening(1,"17:30","24/08/2018",3000,[],1,2));
     console.log(this.screening_list);
   }
 
@@ -30,7 +30,7 @@ export class ViewSreeningComponent implements OnInit {
     this.screening_to_add.id = this.screening_list.length;
     this.screening_list.push(this.screening_to_add);
     this.add_screening = false;
-    this.screening_to_add = new Screening(0,"","","","",0);
+    this.screening_to_add = new Screening(0,"","",0,[],0,0);
   }
 
   onSubmitEdit() {

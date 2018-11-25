@@ -1,5 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Cine-TEC</a>
+
+  <a class="navbar-brand">TEConstruye  </a>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -8,18 +9,31 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item ">
-        <a class="nav-link" href="#">Clientes </a>
-      <li class="nav-item ">
-        <a class="nav-link" href="#">Cines </a>
+        <!-- <a class="nav-link">Proyectos <span class="sr-only">(current)</span></a> -->
+        <a class="nav-link" routerLinkActive="active" routerLink="projects" >Proyectos </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Salas </a>
-      </li>
-      <li class="nav-item ">
-        <a class="nav-link" href="#">Películas </a>
+        <a class="nav-link" routerLinkActive="active" routerLink="clients">Clientes</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Proyecciones </a>
+        <a class="nav-link" routerLinkActive="active" routerLink="materials">Materiales</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="payroll">Planilla</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="reports">Reportes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="employees">Empleados</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="login">Login</a>
+      </li>
+
+      <li class="nav-item">
+        <button class="btn btn-danger" type="button"  (click)="logout()">Logout</button>
       </li>
     </ul>
   </div>
